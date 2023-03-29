@@ -1,7 +1,7 @@
 import requests
 from urllib.parse import urlparse, unquote
 
-class minecraftVersion():
+class MCVersion():
     def __init__(self):
         data = requests.get("https://launchermeta.mojang.com/mc/game/version_manifest_v2.json")
         if data.status_code == 200:

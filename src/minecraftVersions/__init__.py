@@ -2,7 +2,7 @@
 Minecraft Version Wrapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Python wrapper for Minecraft version.
+A wrapper to manage Minecraft version.
 
 Author: tungdo0602
 """

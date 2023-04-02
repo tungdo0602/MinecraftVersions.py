@@ -43,7 +43,6 @@ class latest():
 
 class versionManager():
     def __init__(self, data):
-        """"
         self.version = data["id"]
         self.type = data["type"]
         self.url = data["url"]
@@ -51,9 +50,6 @@ class versionManager():
         self.releaseTime = data["releaseTime"]
         self.sha1 = data["sha1"]
         self.complianceLevel = data["complianceLevel"]
-        """
-        for k, v in data.items():
-            setattr(self, k, v)
         versionData = requests.get(self.url)
         if versionData.status_code == 200:
             self.data = versionData.json()

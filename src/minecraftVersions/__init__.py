@@ -8,7 +8,7 @@ Author: tungdo0602
 """
 
 __title__ = "minecraftVersions"
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 __author__ = "tungdo0602"
 __license__ = "MIT"
 

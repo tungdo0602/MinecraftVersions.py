@@ -20,7 +20,7 @@ with open("README.md", "r") as f:
 setup(
     name=config["name"],
     version=config["version"],    
-    description="A simple minecraft version wrapper written in python",
+    description="A simple Minecraft version wrapper written in Python",
     url="https://github.com/tungdo0602/MinecraftVersions.py",
     project_urls={
         'Issue tracker': 'https://github.com/tungdo0602/MinecraftVersions.py/issues',

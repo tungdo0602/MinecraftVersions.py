@@ -3,22 +3,19 @@ from setuptools import setup
 
 config = {}
 
+keys = ["version", "author", "title", "license"]
+
 with open("minecraftVersions/__init__.py", "r") as f:
     for i in f.readlines():
-        if "__version__" in i:
-            config.update({"version": i.split("=")[1].replace("\n", "").replace('"', "").strip()})
-        if "__author__" in i:
-            config.update({"author": i.split("=")[1].replace("\n", "").replace('"', "").strip()})
-        if "__title__" in i:
-            config.update({"name": i.split("=")[1].replace("\n", "").replace('"', "").strip()})
-        if "__license__" in i:
-            config.update({"license": i.split("=")[1].replace("\n", "").replace('"', "").strip()})
+        for k in keys:
+            if "__{}__".format(k) in i:
+                config.update({k: i.split("=")[1].replace("\n", "").replace('"', "").strip()})
 
 with open("README.md", "r") as f:
     config.update({"readme": f.read()})
 
 setup(
-    name=config["name"],
+    name=config["title"],
     version=config["version"],    
     description="A simple Minecraft version wrapper written in Python",
     url="https://github.com/tungdo0602/MinecraftVersions.py",

@@ -1,5 +1,5 @@
 # MinecraftVersions.py
-#### A simple minecraft version wrapper written in python
+#### A library for getting Minecraft versions
 
 ## Installing
 #### Python 3.8 or higher is required

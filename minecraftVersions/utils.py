@@ -21,11 +21,8 @@ class MCVersion():
                 return versionManager(v)
         raise ValueError("Could not find that Minecraft version!")
     
-    def get(self, version: str):
-        return self.getVersion(version)
-    
-    def version(self, version: str):
-        return self.getVersion(version)
+    get = getVersion
+    version = getVersion
     
     def versionInclude(self, s, first=True):
         versions = []
@@ -37,11 +34,12 @@ class MCVersion():
                     versions.append(v["id"])
         return versions
     
-    def getVersionInclude(self, s, first=True):
-        return self.versionInclude(s, first)
+    getVersionInclude = versionInclude
     
     def getByInclude(self, s, first=True):
         return self.versionInclude(s, first)
+    
+    getByInclude = versionInclude
     
     def getAllVersions(self):
         """
@@ -51,8 +49,7 @@ class MCVersion():
         """
         return allVersions(self.data)
     
-    def getAllVersion(self):
-        return allVersions(self.data)
+    getAllVersion = getAllVersions
     
     def getAll(self, s="", first=True):
         if s:
@@ -76,20 +73,16 @@ class allVersions():
     def get(self, version):
         return MCVersion(self.data, False).getVersion(version)
     
-    def getVersion(self, version):
-        return MCVersion(self.data, False).getVersion(version)
+    getVersion = get
     
-    def version(self, version):
-        return MCVersion(self.data, False).getVersion(version)
+    version = get
     
     def versionIncludes(self, s, first=True):
         return MCVersion(self.data, False).versionInclude(s, first)
     
-    def getVersionInclude(self, s, first=True):
-        return MCVersion(self.data, False).versionInclude(s, first)
+    getVersionInclude = versionIncludes
     
-    def getByInclude(self, s, first=True):
-        return MCVersion(self.data, False).versionInclude(s, first)
+    getByInclude = versionIncludes
     
     def getAll(self, s="", first=True):
         if s:
